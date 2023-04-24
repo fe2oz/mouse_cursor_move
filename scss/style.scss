@@ -1,7 +1,7 @@
 @charset 'urf-8';
 
 
-.cursor{position:fixed; top:0; left:0; z-index:99999; cursor:default; opacity:0; visibility:hidden;
+.cursor{position:fixed; top:0; left:0; z-index:99999; cursor:default; opacity:0; visibility:hidden; will-change:transform; pointer-events: none;
     &-inner{padding:5px; color:#fff; background:rgba(0,0,0, .5); border-radius:20px;}
     &.test{opacity:1; visibility:visible;}
 }

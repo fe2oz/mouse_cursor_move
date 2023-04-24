@@ -23,7 +23,7 @@ for(var i=0; i<section.length; i++){
 
 window.addEventListener('mousemove', function(e){
     var this_cursor = document.querySelector('.test');
+    var posX = 'translate3d(' + e.clientX + 'px, ' + e.clientY + 'px, 0)'
     
-    this_cursor.style.left = `${e.clientX}px`;
-    this_cursor.style.top = `${e.clientY}px`;
+    this_cursor.style.transform = posX;
 })

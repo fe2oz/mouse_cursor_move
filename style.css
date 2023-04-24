@@ -6,6 +6,8 @@
   cursor: default;
   opacity: 0;
   visibility: hidden;
+  will-change: transform;
+  pointer-events: none;
 }
 .cursor-inner {
   padding: 5px;
