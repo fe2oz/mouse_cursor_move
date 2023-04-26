@@ -4,8 +4,9 @@
 ![2](https://user-images.githubusercontent.com/130326962/234475125-4ee786b2-5d90-413e-81a7-fed7f38fc766.png)
 ![3](https://user-images.githubusercontent.com/130326962/234475128-b682354e-19cc-4fbb-a655-3c7b2ff42c1f.png)
 
-각각의 섹션마다 다르게 커스텀한 커서 모양을 보여주고 싶었다.
-섹션은 총 3개니, for문을 돌려 각각의 섹션마다 마우스 오버했을 때 커스텀한 커서가 노출되며 마우스 움직임에 따라 같이 움직이는 걸 아래처럼 구현해봤음
+각각의 섹션마다 다르게 커스텀한 커서 모양을 보여주고 싶었다.<br>
+섹션은 총 3개니, for문을 돌려 각각의 섹션마다 마우스 오버했을 때 커스텀한 커서가 노출되며 마우스 움직임에 따라 같이 움직이는 걸 아래처럼 구현해봤음<br>
+추가로 섹션에서 벗어난 div 태그에 마우스 오버하면 커스텀한 커서가 노출되지 않았으면 좋겠어서 mouseout도 따로 만듦
 
 ![image](https://user-images.githubusercontent.com/130326962/234475479-7dd1537d-f5f2-4d9b-b355-8ff831afc863.png)
 
