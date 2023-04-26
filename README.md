@@ -1,4 +1,4 @@
-# mouse_cursor_move
+# 마우스 움직임에 따라 커스텀한 커서 노출&움직이도록
 
 ![1](https://user-images.githubusercontent.com/130326962/234475119-8e383556-08c3-4df9-918e-9f7c28ab3cf6.png)
 ![2](https://user-images.githubusercontent.com/130326962/234475125-4ee786b2-5d90-413e-81a7-fed7f38fc766.png)
