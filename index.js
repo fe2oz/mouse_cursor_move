@@ -9,10 +9,15 @@ var agent = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
 //     console.log(agent);
 // }
 
-if(agent.indexOf('android') > -1){
-    "android";
-}else if(agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1){
-    document.querySelector('.gif-box-inner').style.background = `url('../asstes/img/test.gif') no-repeat center / contain`;
-}else{
-    "other";
+if(Mobile()){
+    if(agent.indexOf('android') > -1){
+        
+        
+    }else if(agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1){
+        alert("ddd");
+        document.querySelector('.gif-box-inner').style.background = `url('../asstes/img/test.gif') no-repeat center / contain`;
+        
+    }else{
+
+    }
 }
