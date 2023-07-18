@@ -4,12 +4,9 @@ function Mobile(){return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Ope
 var agent = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
 
 console.log(Mobile());
+
 if(Mobile() === true){
-
-        
-
-        document.querySelector('.gif-box-inner').style.background = `url('../asstes/img/test.gif') no-repeat center / cover`;
-
+    document.querySelector('.gif-box-inner').style.background = `url('../asstes/img/test.gif') no-repeat center / contain`;
 }
     
 
