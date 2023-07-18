@@ -1,9 +1,216 @@
-@charset 'urf-8';
 
+*{margin:0; padding:0; box-sizing:border-box; font-family:'NotoSansKR';}
+ul, ol{list-style:none;}
+a{text-decoration:none;}
 
-.cursor{position:fixed; top:0; left:0; z-index:99999; cursor:default; opacity:0; visibility:hidden; will-change:transform; pointer-events: none;
-    &-inner{padding:5px; color:#fff; background:rgba(0,0,0, .5); border-radius:20px;}
-    &.test{opacity:1; visibility:visible;}
+/* 미디어쿼리 */
+@mixin responsive-1780{
+    @media(max-width:1780px){@content;}
+}
+@mixin responsive-1700{
+    @media(max-width:1700px){@content;}
+}
+@mixin responsive-1480{
+    @media(max-width:1480px){@content;}
+}
+@mixin responsive-1400{
+    @media(max-width:1400px){@content;}
+}
+@mixin responsive-1240{
+    @media(max-width:1240px){@content;}
+}
+@mixin responsive-991{
+    @media(max-width:991px){@content;}
+}
+@mixin responsive-720{
+    @media(max-width:720px){@content;}
+}
+@mixin responsive-480{
+    @media(max-width:480px){@content;}
 }
 
-.margin{height:50vh; margin:10vw 0;}
+/* 변수 */
+:root{
+    --float-y:1.5vw;
+    // @include responsive-991{--float-y:1vw;}
+}
+$b:#000;
+$f:#fff;
+$green-1:#3BC996;
+$green-2:#43c9b5;
+$green-3:#f0faf8;
+$green-4:#f1fff7;
+$y:#e4f6b9;
+$gray:#656565; 
+$easing:cubic-bezier(0.215, 0.61, 0.355, 1);
+
+/* 믹스인 */
+@mixin display($display, $ai:null, $jc:null, $ff:null){display:$display; align-items:$ai; justify-content:$jc; flex-flow:$ff;}
+@mixin conSize($wd:null, $hh:null, $lh:null){width:$wd; height:$hh; line-height:$lh;}
+@mixin font($fs:null, $fw:null, $color:null){font-size:$fs; font-weight:$fw; color:$color;}
+@mixin center($position1){position:$position1; top:50%; left:50%; transform:translate(-50%,-50%);}
+@mixin position($position2:$position2, $top:null, $right:null, $bottom:null, $left:null, $zd:null){position:$position2; top:$top; right:$right; bottom:$bottom; left:$left; z-index:$zd;}
+
+/* 반응형 컨텐츠 설정 */
+@media(min-width:992px){
+    .pc-con{display:block;}
+    .mob-con{display:none !important;}
+}
+@media(max-width:991px){
+    .pc-con{display:none !important;}
+    .mob-con{display:block}
+}
+
+/* 폰트 사이즈 */
+.f50-txt-7{@include font(50px, 700);
+    @include responsive-1700{font-size:45px;}
+    @include responsive-991{font-size:40px;}
+    @include responsive-480{font-size:28px;}
+}
+.f48-txt-5{@include font(48px, 500);
+    @include responsive-1700{font-size:41px;}
+    @include responsive-1240{font-size:33px;}
+    @include responsive-991{font-size:35px;}
+    @include responsive-480{font-size:24px;}
+}
+.f38-txt-4{@include font(38px, 400);
+    @include responsive-1700{font-size:28px;}
+    @include responsive-991{font-size:21px;}
+    @include responsive-480{font-size:14px;}
+}
+.f30-txt-7{@include font(30px, 700);
+    @include responsive-1700{font-size:26px;}
+    @include responsive-480{font-size:18px;}
+}
+.f28-txt-4{@include font(28px, 400);
+    @include responsive-1700{font-size:22px;}
+    @include responsive-991{font-size:17px;}
+    @include responsive-480{font-size:12px;}
+}
+.f24-txt-5{@include font(24px, 500);}
+.f22-txt-4{@include font(22px, 400);
+    @include responsive-1700{font-size:19px;}
+    @include responsive-991{font-size:17px;}
+    @include responsive-480{font-size:12px;}
+}
+.f22-txt-5{@include font(22px, 500);
+    @include responsive-1700{font-size:19px;}
+    @include responsive-991{font-size:17px;}
+    @include responsive-480{font-size:14px;}
+}
+.f20-txt-4{@include font(20px, 400);
+    @include responsive-1700{font-size:17px;}
+    @include responsive-1240{font-size:16px;}
+    @include responsive-991{font-size:15px;}
+    @include responsive-480{font-size:12px;}
+}
+.f19-txt-4{@include font(19px, 400);}
+.f18-txt-4{@include font(18px, 400);
+    @include responsive-991{font-size:15px;}
+    @include responsive-480{font-size:12px;}
+}
+.f16-txt-4{@include font(16px, 400);
+    @include responsive-1240{font-size:14px;}
+    @include responsive-480{font-size:11px;}
+}
+.f14-txt-5{@include font(14px, 500);
+    @include responsive-480{font-size:12px;}
+}
+.f14-txt-4{@include font(14px, 400);
+    @include responsive-480{font-size:12px;}
+}
+.f14-txt-6{@include font(14px, 600);}
+
+.comm-inner{max-width:1222px; height:inherit; position:relative; margin:0 auto; padding:0 15px;}
+.comm-b-inner{max-width:1458px; height:inherit; position:relative; margin:0 auto; padding:0 15px;}
+.randing_container_wide span{display:block;}
+.img-quality{image-rendering:-webkit-optimize-contrast; image-rendering:-moz-crisp-edges; image-rendering:-o-crisp-edges; image-rendering:crisp-edges; backface-visibility:hidden;}
+
+/* 구글 플레이 / 앱스토어 다운로드 버튼 */
+.download{@include display(flex, center, null, null); column-gap:15px;
+    @include responsive-991{justify-content:center;}
+    @include responsive-480{column-gap:12px;}
+    img.mob-con{width:auto; height:36px;}
+}
+
+/* 각 섹션 공통 적용 */
+.section{position:relative; z-index:99; overflow:hidden;}
+.comm-sc{
+    @for $i from 1 to 8{
+        &-#{$i}{background:url(../assets/img/comm-sc-#{$i}_bg.png) no-repeat center / cover;
+            @include responsive-991{background:url(../assets/img/mcomm-sc-#{$i}_bg.png) no-repeat center / cover;}
+        }
+    }
+}
+
+/* 플로팅 이미지 애니메이션 */
+.float{width:auto; position:absolute; animation:float 7s ease-in-out infinite alternate;
+    @for $i from 1 to 6{
+        &-#{$i}{animation-delay:calc($i / 5) + s}
+    }
+}
+@keyframes float{
+    0%{transform:translateY(0) rotate(6deg)}
+    25%{transform:translateY(var(--float-y))}
+    50%{transform:translateY(0) rotate(9deg);}
+    75%{transform:translateY(var(--float-y))}
+    100%{transform:translateY(0) rotate(6deg);}
+}
+
+
+.section01{height:calc(100vh + 70px); overflow:hidden; background-position:top; background:linear-gradient(to bottom, #f5fffd, $f);
+    .sc01-circle{position:absolute; z-index:-1; filter:blur(26px); border-radius:50%; transition:all .3s $easing;
+        &.yellow-circle{@include conSize(303px, 303px); right:700px; bottom:120px; background:#FFF49099;
+            @include responsive-1780{right:32%;}
+            @include responsive-991{right:auto; left:-8%; bottom:-21%;}
+            @include responsive-480{@include conSize(180px, 180px); left:-12%; bottom:-7%;}
+        }
+        &.green-circle{@include conSize(770px, 770px); top:-240px; right:-110px; background:rgba(25, 215, 143, 0.6019607843);
+            @include responsive-1780{@include conSize(700px, 700px); right:-14%;}
+            @include responsive-991{@include conSize(66vw, 66vw); top:auto; right:-19%; bottom:-11%;}
+            @include responsive-480{@include conSize(305px, 305px); top:auto; bottom:15%;}
+            &::before{content:""; @include conSize(720px, 720px); @include center(absolute); filter:blur(131px); background:#FFFFFF99;
+                @include responsive-1780{@include conSize(600px, 600px);}
+            }
+        }
+    }
+    div.green-light-circle{@include conSize(675px, 675px); @include position(absolute, null, -14%, -21%, null, -1); filter:blur(101px); background:#8EFFC21F; border-radius:50%;
+        @include responsive-480{display:none;}
+    }
+    &-inner{max-width:1234px; @include display(flex, center, null, null); position:relative;
+        .intro-txt-box{width:100%;
+            &-1{
+                h1{line-height:1.2; letter-spacing:-1px;
+                    p:last-child{color:$green-1}
+                }
+                & > p{@include display(flex, center, null, null); column-gap:8px; margin:5px 0 0 0;
+                    span{color:$green-1;}
+                    @include responsive-991{justify-content:center; margin:12px 0 0 0; font-weight:500;}
+                    @include responsive-480{column-gap:4px; margin:10px 0 0 0;}
+                }
+            }
+            &-2{margin:43px 0 52px;
+                @include responsive-991{margin:26px 0 52px;}
+                @include responsive-480{margin:22px 0 24px;}
+            }
+            &-3{line-height:1.6;}
+            @include responsive-1700{width:45vw;}
+            @include responsive-991{width:100%; text-align:center;}
+        }
+        .gif-box{@include conSize(calc(34vw + 2px), 38vw); @include position(absolute, calc(9vw + 30px), calc(-2vw + 5px), null, null, null);
+            .heart{@include conSize(84px, 90px); @include position(absolute, -1px, null, null, calc(50% - 95px), null); transform:translateX(-50%);}
+            &-inner{@include conSize(100%, 100%); position:relative; background:url(../assets/img/landing-gif.gif) no-repeat center / cover; @extend .img-quality;
+                @include responsive-991{background:url(../assets/img/mlanding-gif.gif) no-repeat center / cover;}
+                @include responsive-480{background-size:contain;}
+            }
+            @media(min-width:1921px){@include conSize(654px, 729px)}
+            @include responsive-1700{@include conSize(582px, 648px); position:static;}
+            @include responsive-991{@include conSize(362px, 630px);}
+            @include responsive-480{@include conSize(349px, 490px); margin:0 0 0 12px;}
+            
+        }
+        @include responsive-991{flex-flow:column;}
+    }
+    @include responsive-991{height:auto; padding:114px 0; background-size:100% 100%;}
+    @include responsive-480{padding:121px 0 30px;}
+}
