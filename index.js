@@ -5,7 +5,7 @@ var agent = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
 
 console.log(Mobile());
 
-if(Mobile() === true){
+if(Mobile()){
     document.querySelector('.gif-box-inner').style.background = `url('../asstes/img/test.gif') no-repeat center / contain`;
 }
     
