@@ -4,7 +4,7 @@ function Mobile(){return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Ope
 
 var agent = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
 
-if(Mobile()){
+
     if( agent.indexOf('android') > -1 ) {
         
     }else if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
@@ -14,4 +14,4 @@ if(Mobile()){
     }else{
         
     }
-}
+
