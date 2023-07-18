@@ -12,6 +12,5 @@ if( agent.indexOf('android') > -1 ) {
     ios.style.display = 'block';
     iosEtc.style.display = 'none';
 }else{
-    ios.style.display = 'none';
-    iosEtc.style.display = 'block';
+    
 }
