@@ -197,21 +197,10 @@ $easing:cubic-bezier(0.215, 0.61, 0.355, 1);
             @include responsive-1700{width:45vw;}
             @include responsive-991{width:100%; text-align:center;}
         }
-        .gif-box.iosEtc{@include conSize(calc(34vw + 2px), 38vw); @include position(absolute, calc(9vw + 30px), calc(-2vw + 5px), null, null, null);
+        .gif-box{@include conSize(calc(34vw + 2px), 38vw); @include position(absolute, calc(9vw + 30px), calc(-2vw + 5px), null, null, null);
             .heart{@include conSize(84px, 90px); @include position(absolute, -1px, null, null, calc(50% - 95px), null); transform:translateX(-50%);}
             &-inner{@include conSize(100%, 100%); position:relative; background:url(../asstes/img/landing-gif.gif) no-repeat center / cover; @extend .img-quality;
                 @include responsive-991{background:url(../asstes/img/mlanding-gif.gif) no-repeat center / cover;}
-                @include responsive-480{background-size:contain;}
-            }
-            @media(min-width:1921px){@include conSize(654px, 729px)}
-            @include responsive-1700{@include conSize(582px, 648px); position:static;}
-            @include responsive-991{@include conSize(362px, 630px);}
-            @include responsive-480{@include conSize(349px, 490px); margin:0 0 0 12px;}
-        }
-        .gif-box.ios{
-            .heart{@include conSize(84px, 90px); @include position(absolute, -1px, null, null, calc(50% - 95px), null); transform:translateX(-50%);}
-            &-inner{@include conSize(100%, 100%); position:relative; background:url(../asstes/img/landing-gif.gif) no-repeat center / cover; @extend .img-quality;
-                @include responsive-991{background:url(../asstes/img/test.gif) no-repeat center / cover;}
                 @include responsive-480{background-size:contain;}
             }
             @media(min-width:1921px){@include conSize(654px, 729px)}

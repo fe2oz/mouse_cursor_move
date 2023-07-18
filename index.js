@@ -1,16 +1,17 @@
+var media = matchMedia('screen and (max-width:991px)');
 
-
-const ios = document.querySelector('.gif-box.ios');
-const iosEtc = document.querySelector('.gif-box.iosEtc');
+function Mobile(){return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);}
 
 var agent = navigator.userAgent.toLowerCase();
 
-if( agent.indexOf('android') > -1 ) {
-    ios.style.display = 'none';
-    iosEtc.style.display = 'block';
-}else if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
-    ios.style.display = 'block';
-    iosEtc.style.display = 'none';
-}else{
-    
+if(Mobile()){
+    if( agent.indexOf('android') > -1 ) {
+        
+    }else if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
+        if(media.matches){
+            document.querySelector('.gif-box-inner').style.background = `url(../asstes/img/test.gif) no-repeat center / cover`;
+        }
+    }else{
+        
+    }
 }
